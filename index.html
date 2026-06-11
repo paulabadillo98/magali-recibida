@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibida de Magalí Ximena Chirino González</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa: #f8d7e3;
+            --rosa-oscuro: #d98ca8;
+            --rosa-viejo: #b76e79;
+            --dorado: #d4b16a;
+            --blanco: #fff;
+            --texto: #4f3a40;
+            --fondo-claro: #fff8fb;
+            --fondo-oscuro: #fdeef4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(180deg, var(--fondo-claro), var(--fondo-oscuro));
+            color: var(--texto);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        section {
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* DECORATIVE FLOWERS */
+        .flower-decoration {
+            position: fixed;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 0;
+            font-size: 8rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .flower-decoration.top-left {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .flower-decoration.top-right {
+            top: 5%;
+            right: 5%;
+            animation-delay: 1s;
+            font-size: 6rem;
+        }
+
+        .flower-decoration.bottom-left {
+            bottom: 10%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        .flower-decoration.bottom-right {
+            bottom: 15%;
+            right: 5%;
+            animation-delay: 1.5s;
+            font-size: 7rem;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            position: relative;
+            background: linear-gradient(135deg, #f8d7e3 0%, #fdeef4 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(217, 140, 168, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 177, 106, 0.15) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .frase {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 700;
+            color: var(--rosa-viejo);
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+            letter-spacing: 1px;
+        }
+
+        .nombre {
+            margin-top: 25px;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--rosa-viejo);
+            animation: fadeInUp 1s ease-out 0.2s both;
+            font-weight: 600;
+        }
+
+        .subtitulo {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            color: var(--rosa-oscuro);
+            animation: fadeInUp 1s ease-out 0.4s both;
+            font-style: italic;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            background: var(--rosa-oscuro);
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 40px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            box-shadow: 0 5px 15px rgba(217, 140, 168, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(217, 140, 168, 0.4);
+        }
+
+        .btn.secondary {
+            background: var(--dorado);
+            margin: 10px 5px;
+        }
+
+        .btn.secondary:hover {
+            box-shadow: 0 10px 25px rgba(212, 177, 106, 0.4);
+        }
+
+        .btn.whatsapp {
+            background: #25d366;
+        }
+
+        .btn.whatsapp:hover {
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn.copy {
+            background: var(--rosa-viejo);
+        }
+
+        /* CARD */
+        .card {
+            background: white;
+            max-width: 900px;
+            margin: auto;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(217, 140, 168, 0.2);
+        }
+
+        .card h2 {
+            font-size: 2.5rem;
+            color: var(--rosa-viejo);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .card h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--dorado), var(--rosa-oscuro));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--texto);
+            margin: 15px 0;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .evento {
+            background: linear-gradient(135deg, rgba(248, 215, 227, 0.5), rgba(255, 255, 255, 0.9));
+            border-left: 6px solid var(--dorado);
+            padding: 30px;
+            text-align: left;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .evento::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border: 3px solid var(--dorado);
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .evento:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .evento h3 {
+            font-size: 1.8rem;
+            color: var(--rosa-viejo);
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .evento p {
+            text-align: left;
+            margin: 10px 0;
+            color: var(--texto);
+        }
+
+        .evento strong {
+            color: var(--rosa-oscuro);
+            font-size: 1.05rem;
+        }
+
+        .evento-buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* COUNTDOWN */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .time-box {
+            background: white;
+            width: 100px;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(217, 140, 168, 0.2);
+        }
+
+        .time-box:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 25px rgba(217, 140, 168, 0.3);
+        }
+
+        .time-box span {
+            display: block;
+        }
+
+        .time-box .num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--rosa-viejo);
+        }
+
+        .time-box .label {
+            font-size: 0.9rem;
+            color: var(--rosa-oscuro);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        /* ALIAS */
+        .alias-section {
+            background: linear-gradient(135deg, var(--rosa), var(--rosa-oscuro));
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(217, 140, 168, 0.3);
+        }
+
+        .alias-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--rosa-viejo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .alias-section p {
+            color: white;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 80px 20px;
+            background: var(--blanco);
+            text-align: center;
+            border-top: 2px solid var(--rosa);
+        }
+
+        footer h2 {
+            color: var(--rosa-viejo);
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--texto);
+            max-width: 600px;
+            margin: 15px auto;
+        }
+
+        .firma {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--rosa-oscuro);
+        }
+
+        .firma-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--rosa-viejo);
+            margin-bottom: 10px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            section {
+                padding: 50px 15px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .card h2 {
+                font-size: 1.8rem;
+            }
+
+            .evento {
+                text-align: center;
+                border-left: none;
+                border-top: 6px solid var(--dorado);
+                margin-top: 20px;
+            }
+
+            .evento::before {
+                top: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .evento:hover {
+                transform: translateY(-5px);
+            }
+
+            .time-box {
+                width: 80px;
+                padding: 15px;
+            }
+
+            .time-box .num {
+                font-size: 1.8rem;
+            }
+
+            .alias-box {
+                flex-direction: column;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 12px 25px;
+            }
+
+            .flower-decoration {
+                font-size: 4rem;
+            }
+
+            .flower-decoration.top-right {
+                font-size: 3rem;
+            }
+
+            .flower-decoration.bottom-right {
+                font-size: 3.5rem;
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- DECORATIVE FLOWERS -->
+    <div class="flower-decoration top-left">🌸</div>
+    <div class="flower-decoration top-right">🌷</div>
+    <div class="flower-decoration bottom-left">🌺</div>
+    <div class="flower-decoration bottom-right">🌹</div>
+
+    <!-- AUDIO -->
+    <audio autoplay loop id="bgAudio" style="display: none;">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="frase">
+                ✨ Ayer llorando<br>
+                Hoy brillando ✨
+            </div>
+            <h1 class="nombre">Magalí Ximena Chirino González</h1>
+            <p class="subtitulo">Licenciada en Trabajo Social</p>
+            <a href="#bienvenida" class="btn">💌 Ver Invitación</a>
+        </div>
+    </section>
+
+    <!-- BIENVENIDA -->
+    <section id="bienvenida">
+        <div class="card">
+            <h2>¡Me recibo! 🎓</h2>
+            <p>Después de años de esfuerzo, noches de estudio y mucha dedicación, llegó el momento de cosechar los frutos.</p>
+            <p>Gracias por ser parte de mi camino.</p>
+            <p>Espero que puedas acompañarme en este momento tan especial y celebrar conmigo este gran logro.</p>
+        </div>
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+    <section id="countdown">
+        <h2>⏳ Cuenta Regresiva</h2>
+        <p style="margin-top: 20px; font-size: 1.1rem; color: var(--rosa-oscuro);">Faltan:</p>
+        <div class="countdown">
+            <div class="time-box">
+                <span class="num" id="dias">0</span>
+                <span class="label">Días</span>
+            </div>
+            <div class="time-box">
+                <span class="num" id="horas">0</span>
+                <span class="label">Horas</span>
+            </div>
+            <div class="time-box">
+                <span class="num" id="minutos">0</span>
+                <span class="label">Minutos</span>
+            </div>
+            <div class="time-box">
+                <span class="num" id="segundos">0</span>
+                <span class="label">Segundos</span>
+            </div>
+        </div>
+        <p style="margin-top: 30px; font-size: 1.05rem; color: var(--rosa-oscuro); font-weight: 500;">para celebrar este gran logro.</p>
+    </section>
+
+    <!-- CRONOGRAMA -->
+    <section id="cronograma">
+        <div class="card">
+            <h2>📅 Cronograma de Festejos</h2>
+            <div class="timeline">
+                <!-- FESTEJO 1 -->
+                <div class="evento">
+                    <h3>🎓 Defensa de Tesis</h3>
+                    <p><strong>Jueves 25 de junio – 17:00 hs</strong></p>
+                    <p><strong>Ubicación:</strong> Facultad de Ciencias Sociales – UNSJ<br>Av. Ignacio de la Roza 727 Oeste</p>
+                    <p style="margin-top: 15px;">Defensa de tesis, fotos, tirada de birrete y caravana.</p>
+                    <div class="evento-buttons">
+                        <a href="https://maps.app.goo.gl/J3DFSkAjDHq3Eb266?g_st=ic" target="_blank" class="btn secondary">📍 Cómo llegar</a>
+                    </div>
+                </div>
+
+                <!-- FESTEJO 2 -->
+                <div class="evento">
+                    <h3>🥂 Fiesta de Celebración</h3>
+                    <p><strong>Jueves 25 de junio – 22:00 hs (Cena) | 01:00 hs (Fiesta)</strong></p>
+                    <p><strong>Ubicación:</strong> Club Banco Nación</p>
+                    <p style="margin-top: 15px;">Una noche para celebrar juntos este gran paso y disfrutar entre familiares y amigos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONFIRMACIÓN -->
+    <section id="confirmacion">
+        <div class="card">
+            <h2>📱 Confirmación de Asistencia</h2>
+            <p>Tu presencia es muy importante para mí.</p>
+            <p style="font-weight: 500; color: var(--rosa-oscuro);">Por favor confirmá tu asistencia por WhatsApp</p>
+            <div style="margin-top: 30px;">
+                <a href="https://wa.me/542645598519?text=Hola%20Magalí,%20confirmo%20mi%20asistencia%20a%20tu%20recibida%20%F0%9F%8E%93" target="_blank" class="btn whatsapp">
+                    💬 Confirmar Asistencia
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MESA DE REGALOS -->
+    <section id="regalos">
+        <div class="card">
+            <h2>🎁 Mesa de Regalos</h2>
+            <p>Tu compañía es el mejor regalo.</p>
+            <p>Pero si deseás hacerme un presente, podés dejarlo en la mesa de regalos durante la fiesta o realizar una transferencia.</p>
+            
+            <div class="alias-section">
+                <p>Transferencia por Mercado Pago</p>
+                <div class="alias-box">
+                    <span>sitara99</span>
+                    <button class="btn copy" id="copyBtn" onclick="copiarAlias()">📋 Copiar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="cierre">
+        <h2>✨ Gracias ✨</h2>
+        <p>Compartir este logro con vos es lo que lo hace verdaderamente inolvidable.</p>
+        <p style="font-size: 1.2rem; font-weight: 600; margin-top: 30px;">¡Te espero para celebrar juntos este sueño cumplido!</p>
+        <div class="firma">
+            <div class="firma-name">Magalí</div>
+            <span style="font-size: 1rem;">Licenciada en Trabajo Social</span>
+        </div>
+    </footer>
+
+    <script>
+        // COUNTDOWN TIMER
+        function actualizarCountdown() {
+            const fechaEvento = new Date('2026-06-25T17:00:00').getTime();
+            const ahora = new Date().getTime();
+            const diferencia = fechaEvento - ahora;
+
+            if (diferencia > 0) {
+                const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+                document.getElementById('dias').textContent = dias;
+                document.getElementById('horas').textContent = horas;
+                document.getElementById('minutos').textContent = minutos;
+                document.getElementById('segundos').textContent = segundos;
+            } else {
+                document.getElementById('dias').textContent = '¡';
+                document.getElementById('horas').textContent = 'Y';
+                document.getElementById('minutos').textContent = 'A';
+                document.getElementById('segundos').textContent = '!';
+            }
+        }
+
+        // Actualizar cada segundo
+        setInterval(actualizarCountdown, 1000);
+        actualizarCountdown();
+
+        // COPY ALIAS FUNCTION
+        function copiarAlias() {
+            const alias = 'sitara99';
+            navigator.clipboard.writeText(alias).then(() => {
+                const btn = document.getElementById('copyBtn');
+                const textoOriginal = btn.textContent;
+                btn.textContent = '✅ ¡Copiado!';
+                btn.style.background = '#25d366';
+                
+                setTimeout(() => {
+                    btn.textContent = textoOriginal;
+                    btn.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar:', err);
+            });
+        }
+
+        // SMOOTH SCROLL BEHAVIOR
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // AUDIO MANAGEMENT
+        const audio = document.getElementById('bgAudio');
+        if (audio) {
+            audio.volume = 0.2;
+            
+            // Intentar reproducir audio automáticamente
+            document.addEventListener('click', () => {
+                audio.play().catch(err => {
+                    console.log('Autoplay bloqueado por navegador');
+                });
+            }, { once: true });
+        }
+    </script>
+</body>
+</html>
